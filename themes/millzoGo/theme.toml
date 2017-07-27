@@ -3,16 +3,16 @@
 
 name = "MillzoGo"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
+licenselink = "https://github.com/millzo/millzoSite/blob/master/themes/millzoGo/LICENSE.md"
 description = ""
-homepage = "http://siteforthistheme.com/"
+homepage = "http://www.millzo.com/"
 tags = []
 features = []
 min_version = "0.20.6"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Zachary Miller"
+  homepage = "http://www.millzo.com/"
 
 # If porting an existing theme
 [original]

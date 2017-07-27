@@ -1,4 +1,4 @@
 +++
-draft = "true"
-title = "The Official Home of Millzo, Inc."
+draft = "false"
+title = "The Home of Millzo, Inc."
 +++
