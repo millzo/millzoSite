@@ -1,0 +1,12 @@
+{{ partial "header.html" . -}}
+<div class="container">
+<article class="post">
+  <h1 class="title-post" >{{ .Title }}</h1>
+{{- partial "mediafeature.html" . -}}
+  <section class="post-copy">
+  {{- .Content -}}
+  </section>
+{{ partial "taglist.html" . -}}
+</article>
+</div>
+{{ partial "footer.html" . -}}

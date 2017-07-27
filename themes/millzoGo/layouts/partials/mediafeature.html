@@ -1,0 +1,22 @@
+{{ $imgfeatured := .Params.featured_image }}
+{{- if $imgfeatured -}}
+    {{- if in $imgfeatured ".mp4" -}}
+    <video class="img-home-feature" preload="none" controls>
+      <source src="/img/{{ $imgfeatured }}" type="video/mp4">
+    </video>
+    {{- else -}}
+    {{- $imgwidth := int .Params.imgwidth -}}
+      <img class="img-home-feature" srcset="{{- range $srci, $srcwidth := .Params.srcwidth -}}
+                                              {{- if le (int $srcwidth) ($imgwidth) -}}
+                                              {{- if $srci -}}{{- "," }} {{ end -}}
+                                                {{ if eq (int $srcwidth) $imgwidth -}}
+                                                {{- print "/img/" $imgfeatured }} {{ print $srcwidth "w" -}}
+                                                {{ else }}
+                                                {{- print "/img/" $srcwidth "-" $imgfeatured }} {{ print $srcwidth "w" -}}
+                                                {{- end -}}
+                                              {{ end }}
+                                            {{- end -}}"
+                                     sizes="100vw"
+      src="/img/{{ $imgfeatured }}" alt="{{ .Title }}">
+    {{- end -}}
+{{- end -}}

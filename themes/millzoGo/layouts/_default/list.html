@@ -1,0 +1,13 @@
+{{ partial "header.html" . -}}
+<div class="listcontainer">
+<section class="list">
+  <h1>{{ humanize .Title }}</h1>
+  {{- range $index, $posts := .Paginator.Pages -}}
+  {{ partial "listItems.html" . }}
+  {{- end -}}
+</section>
+</div>
+<footer class="paginator-area">
+{{- template "_internal/pagination.html" . -}}
+</footer>
+{{- partial "footer.html" . -}}

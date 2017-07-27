@@ -1,0 +1,11 @@
+{{ partial "header.html" . -}}
+<div class="container">
+<section class="page" >
+  <h1>{{ .Title }}</h1>
+  <section class="post-copy">
+  {{ .Content -}}
+  {{ partial "contactForm.html" . -}}
+  </section>
+</section>
+</div>
+{{- partial "footer.html" . -}}

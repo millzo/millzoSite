@@ -1,0 +1,597 @@
+// define color variables
+
+$shadow: rgb(20,20,20);
+$background: $shadow;
+$contentbg: rgba(30,30,30,.4);
+$postbg: rgba(55,55,55,.5);
+$headerbg: $shadow;
+$green-glow: #0DEE88;
+// $millzologofill: rgb(150,220,150);
+$millzologofill: rgb(175,190,175);
+$millzologodesat: desaturate($green-glow, 50%);
+$millzologofill: lighten($millzologodesat, 20%);
+// $millzologofill: $green-glow;
+$millzologofill-hover: $green-glow;
+$millzologostroke: $green-glow;
+$globe-blur: rgb(60,60,60);
+$globe-blur-hover: rgb(85,85,85);
+$globe-stroke: rgba(13,238,136,1);
+$globe-fill: rgba(23,23,23,.95);
+$midtone: silver;
+$navlink: silver;
+$border: darken($millzologofill, 50%);
+$highlight: lighten($midtone, 30%);
+$copy: $midtone;
+$border-params: solid 1px $border;
+
+// define size variables
+
+$article-max-width: 40em;
+$v-header-width: 20rem;
+$v-header-max-width: 25em;
+$logo-margin: 1.25rem 0 1rem 5vw;
+$post-margin-top: 1em;
+$logo-width: 8rem;
+$logo-height: $logo-width * .621;
+
+//normalize elements
+
+html {
+  box-sizing: border-box;
+  font-family: "Roboto Slab";
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: inherit;
+  font-weight: normal;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body, .html, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block;
+  padding-left: 0;
+  padding-right: calc(100vw - 100%);
+  background-color: $background;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.75em;
+  padding: .8em 0 1.2rem 0;
+  color: $navlink;
+}
+
+h2 {
+  font-size: 2em;
+  padding: 0 0 .5em 0;
+}
+
+*:link, *:visited {
+  text-decoration: none;
+  color: $navlink;
+}
+
+*::selection {
+  background: $highlight;
+  color: $shadow;
+}
+
+*::-moz-selection {
+  background: $highlight;
+  color: $shadow;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  align-items: center;
+  justify-content: space-around;
+  height: 9rem;
+  width: 100vw;
+  background-color: $headerbg;
+}
+
+.millzologo {
+  width: $logo-width;
+  height: $logo-height;
+  margin: $logo-margin;
+  overflow: visible;
+  order: initial;
+}
+
+.millzologofill {
+  fill: $millzologofill;
+    transition: 1s;
+}
+
+.millzologostroke {
+  stroke: $millzologostroke;
+  stroke-width: 1.5;
+  opacity: .1;
+}
+
+.globe-blur {
+  fill: $globe-blur;
+  transition: 1s;
+  overflow: visible;
+}
+
+.millzolink {
+  z-index: 100;
+}
+
+.globe-fill {
+  fill: $globe-fill;
+}
+
+.globe-stroke {
+  fill: none;
+  stroke: $globe-stroke;
+}
+
+.millzologo:hover {
+  transition: 1.25s;
+
+  .millzologofill {
+    fill: $millzologofill-hover;
+  }
+
+  .globe-blur {
+    fill: $globe-blur-hover;
+  }
+
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  order: initial;
+  width: calc(15em + 5vw);
+  height: 6.5rem;
+  padding: 0 .5em 0 .5em;
+}
+
+.about-icon, .posts-icon, .contact-icon {
+  height: 1.75em;
+  width: 1.75em;
+  display: block;
+  margin: auto;
+}
+
+.about-icon {
+  height: 2.25em;
+  transform: rotateZ(22deg);
+}
+
+.posts-icon {
+  transform: rotateZ(9deg);
+}
+
+.contact-icon {
+  transform: rotateZ(-25deg);
+}
+
+.navlink {
+  padding: 0 .5em 0 .5em;
+  margin-top: .25rem;
+}
+
+#about-link {
+  align-self: flex-start;
+}
+
+#posts-link {
+  align-self: center;
+}
+
+.navlink:link,.navlink:visited {
+  transition: 1.25s;
+  color: $navlink;
+  stroke: $navlink;
+  fill: $navlink;
+  opacity: .7;
+}
+
+.navlink:hover {
+  transition: .25s;
+  color: $navlink;
+  fill: $navlink;
+  stroke: $navlink;
+  opacity: 1;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.home, .container, .listcontainer {
+  min-height: calc(100vh - 14rem);
+  width: 100%;
+  display: block;
+  padding: 0 10% 5em 10%;
+  background-color: $contentbg;
+  opacity: .999;
+}
+
+.post, .page, .list {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  max-width: 50rem;
+}
+
+.post-copy {
+  padding: 1rem 2rem 1rem 2rem;
+  min-height: 100%;
+  color: $copy;
+  background-color: $postbg;
+  border: $border-params;
+  margin-top: -1px;
+}
+
+.listcontainer {
+  min-height: calc(100vh - 17rem);
+}
+
+.home-featured {
+  display: block;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto 2rem auto;
+}
+
+.img-home-feature, .list-img {
+  border: $border-params;
+}
+
+.list-title:hover > .img-home-feature {
+  border-color: $green-glow;
+}
+
+.description {
+  padding: 1rem;
+  background-color: $postbg;
+  border: $border-params;
+  color: $copy;
+  margin: auto;
+  margin-top: -1px;
+}
+
+.meta {
+  float: right;
+  padding: .15rem 1rem .15rem 1rem;
+  margin: .3rem 0 0 0;
+  background-color: $postbg;
+  border: $border-params;
+  color: $copy;
+}
+
+.project-posters, .client-logos, .project-special, .client-logos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.posters {
+  display: block;
+  width: calc(10rem * .675);
+  height: 10rem;
+  margin: .25rem;
+}
+
+.specialprojects {
+  width: 15rem;
+  margin: 0 1rem 0 1rem;
+}
+
+.logos {
+  display: block;
+  align-self: center;
+  width: 6rem;
+  height: 100%;
+  margin: 0 1rem 0 1rem;
+}
+
+.list-item {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto 0 auto;
+}
+
+.list-title {
+  color: $midtone;
+}
+
+.list-title:hover, .featured-title:hover {
+  color: $green-glow;
+}
+
+.tags {
+  position: relative;
+  font-size: .75em;
+  padding: 0;
+  height: 2rem;
+  margin: 0 0 2rem 0;
+}
+
+.tag-link {
+  display: inline;
+  position: relative;
+  margin: 0 .25rem 0 0;
+  bottom: -.5rem;
+  text-decoration: none;
+
+  a {
+    border: $border-params;
+    background-color: $postbg;
+    padding: .25rem .5rem .25rem .5rem;
+    // color: $copy;
+  }
+
+  a:hover {
+    color: $shadow;
+    background-color: $green-glow;
+  }
+}
+
+.recent-two {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 50rem;
+  margin: auto;
+}
+
+.recent-items {
+  width: 100%;
+  font-size: 70%;
+
+  .description {
+    display: none;
+  }
+}
+
+
+.pagination {
+  display: block;
+  text-align: center;
+  padding: .75em 0 0 0;
+  height: 3rem;
+  margin: auto;
+
+  li {
+    display: inline;
+    list-style: none;
+    padding: .5em;
+  }
+
+  a {
+    color: $midtone;
+  }
+
+  a:hover {
+    color: $highlight;
+  }
+}
+
+.disabled a {
+  color: $shadow;
+}
+
+.active a {
+  color: $green-glow;
+}
+
+.paginator-area {
+  background-color: $contentbg;
+}
+
+.contact-form {
+  margin: 5rem 0 5rem 0;
+  width: 100%;
+}
+
+.input-field {
+  background-color: silver;
+  border-style: none;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  color: $midtone;
+  opacity: .999;
+}
+
+.main-footer {
+  padding: .75em 10% .75em 10%;
+  height: 3rem;
+  background-color: $contentbg;
+}
+
+footer h6 {
+  margin: auto;
+  max-width: 50rem;
+}
+
+.twitter-logo, .linkedin-logo, .facebook-logo {
+  height: 1.5rem;
+  padding: 0 .5rem 0 .5rem;
+}
+
+.linkedin-logo {
+  padding-right: .3rem;
+}
+
+.social-footer {
+  display: block;
+  width: 100%;
+  margin: auto;
+  height: 2rem;
+  padding-top: .25rem;
+  background-color: $contentbg;
+}
+
+@media (min-width: 640px) {
+  $logo-width: 10rem;
+  $logo-height: $logo-width * .621;
+
+  .millzologo {
+    width: $logo-width;
+    height: $logo-height;
+  }
+
+  .about-icon, .posts-icon, .contact-icon {
+    height: 2.25em;
+    width: 2.25em;
+  }
+
+  .about-icon {
+    height: 2.75em;
+  }
+
+  .recent-two {
+    flex-direction: row;
+  }
+
+  .recent-items {
+    width: 49%;
+    font-size: 70%;
+  }
+}
+
+@media (min-width: 900px) {
+  $background: blue;
+  $logo-margin: 3.5vh 0 0 0;
+  $logo-width: 13vw;
+  $logo-height: calc(13vw * .621);
+  $logo-height: auto;
+
+  html {
+    font-size: 1.25em;
+  }
+
+  body {
+    padding-left: 30vw;
+  }
+
+  header {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: initial;
+    height: 100vh;
+    width: 30vw;
+    border-width: 0 1px 0 0;
+  }
+
+  .millzologo {
+    width: $logo-width;
+    height: $logo-height;
+    margin: $logo-margin;
+    order: 2;
+    min-width: 8rem;
+    max-width: 12rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    order: 1;
+    width: 28vw;
+    max-width: 28rem;
+    height: 5.5rem;
+    padding: 0 .5em 0 .5em;
+  }
+
+  .about-icon, .posts-icon, .contact-icon {
+    height: 2.25em;
+    width: 2.25em;
+  }
+
+  .navlink {
+    font-size: .8em;
+  }
+
+  .navlink {
+    padding: 0 .5em 0 .5em;
+    margin-top: 2rem;
+  }
+
+  #about-link {
+    align-self: flex-end;
+  }
+
+  #posts-link {
+    align-self: flex-start;
+  }
+
+  .home, .container, .listcontainer {
+    min-height: calc(100vh - 3rem);
+  }
+
+  .listcontainer {
+    min-height: calc(100vh - 6rem);
+  }
+
+  .twitter-logo, .linkedin-logo, .facebook-logo {
+    height: 1.25rem;
+    padding: 0 .5rem 0 .5rem;
+  }
+
+  .social-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 4rem 0 4rem;
+    position: fixed;
+    width: 30vw;
+    left: 0;
+    bottom: 1rem;
+    background-color: rgba(0,0,0,0);
+  }
+
+  footer {
+    padding: .75em 12% .75em 12%;
+  }
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 3000px) {
+  html {
+    font-size: 2em;
+  }
+}

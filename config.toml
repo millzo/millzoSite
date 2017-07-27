@@ -1,0 +1,6 @@
+theme = "millzoGo"
+baseURL = "http://www.millzo.com/"
+languageCode = "en-us"
+title = "Millzo, Inc."
+[taxonomies]
+tag = "tags"

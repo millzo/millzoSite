@@ -1,0 +1,23 @@
+{{ partial "header.html" . -}}
+<section class="home">
+{{- $featured := index .Site.Taxonomies.tags.featured 0 }}
+<div class="home-featured">
+  <a href="{{ $featured.Permalink }}"><h1 class="featured-title">{{ $featured.Title }}</h1></a>
+{{ partial "medialink.html" $featured }}
+  {{ with $featured.Params.description }}<h5 class="description">{{ . }}</h5>{{ end }}
+  <ul class="tags">
+    {{- range $featured.Params.tags }}
+    <li class="tag-link"><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+    {{- end }}
+    <span class="meta">{{ $featured.PublishDate.Format "Jan 2, 2006" -}}</span>
+  </ul>
+</div>
+<div class="recent-two">
+{{- range $index, $recent := first 2 (where (where .Data.Pages ".Section" "posts") ".Title" "!=" $featured.Title) }}
+<div class="recent-items">
+{{- partial "listItems.html" . -}}
+</div>
+{{- end }}
+</div>
+</section>
+{{ partial "footer.html" . }}
