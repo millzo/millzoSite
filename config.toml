@@ -1,5 +1,5 @@
 theme = "millzoGo"
-baseURL = "http://www.millzo.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Millzo, Inc."
 [taxonomies]
