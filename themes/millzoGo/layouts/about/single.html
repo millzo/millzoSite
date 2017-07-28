@@ -2,7 +2,7 @@
 <div class="container">
 <section class="page">
   <h1>{{ .Title }}</h1>
-  <section class="post-copy">
+  <section class="single-copy">
   {{ with .Params.featured_image }}<img class="about-feature" src="/img/{{ . }}" alt="{{ .Title}}">{{ end }}
   {{- .Content -}}
   <h3 class="project-heading">Films</h3>

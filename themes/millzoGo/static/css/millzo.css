@@ -31,17 +31,25 @@ body {
 
 h1, h2 {
   line-height: 1.1;
+  padding-bottom: .6rem;
+  margin-bottom: .25rem;
 }
 
 h1 {
-  font-size: 2.5em;
-  padding: .8em 0 1.2rem 0;
-  color: silver;
+  font-size: 2.5rem;
+  color: #89bfa6;
+}
+
+.page h1, .list h1 {
+  border-bottom: solid 1px #89bfa6;
 }
 
 h2 {
   font-size: 2em;
-  padding: 0 0 .5em 0;
+}
+
+.listcontainer h2 {
+  margin-top: 3.5rem;
 }
 
 *:link, *:visited {
@@ -50,12 +58,12 @@ h2 {
 }
 
 *::selection {
-  background: white;
+  background: #aad1bf;
   color: #141414;
 }
 
 *::-moz-selection {
-  background: white;
+  background: #aad1bf;
   color: #141414;
 }
 
@@ -81,7 +89,7 @@ header {
 }
 
 .millzologofill {
-  fill: #91d0b3;
+  fill: #89bfa6;
   transition: 1s;
 }
 
@@ -92,7 +100,7 @@ header {
 }
 
 .globe-blur {
-  fill: #3c3c3c;
+  fill: #323232;
   transition: 1s;
   overflow: visible;
 }
@@ -119,7 +127,7 @@ header {
 }
 
 .millzologo:hover .globe-blur {
-  fill: #555555;
+  fill: #464646;
 }
 
 nav {
@@ -193,8 +201,8 @@ img, video {
   min-height: calc(100vh - 14rem);
   width: 100%;
   display: block;
-  padding: 0 10% 5em 10%;
-  background-color: rgba(30, 30, 30, 0.4);
+  padding: 2.5rem 10% 5rem 10%;
+  background-color: rgba(255, 255, 255, 0.1);
   opacity: .999;
 }
 
@@ -204,13 +212,16 @@ img, video {
   max-width: 50rem;
 }
 
-.post-copy {
+.post-copy, .single-copy {
   padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 0 1rem 0;
   min-height: 100%;
   color: silver;
-  background-color: rgba(55, 55, 55, 0.5);
-  border: solid 1px #1e4433;
   margin-top: -1px;
+}
+
+.post-copy {
+  border-bottom: solid 1px #89bfa6;
 }
 
 .listcontainer {
@@ -225,7 +236,7 @@ img, video {
 }
 
 .img-home-feature, .list-img {
-  border: solid 1px #1e4433;
+  border: solid 1px #89bfa6;
 }
 
 .list-title:hover > .img-home-feature {
@@ -233,21 +244,18 @@ img, video {
 }
 
 .description {
-  padding: 1rem;
-  background-color: rgba(55, 55, 55, 0.5);
-  border: solid 1px #1e4433;
+  padding: 1rem 0 1rem 0;
+  border-bottom: solid 1px #89bfa6;
   color: silver;
   margin: auto;
-  margin-top: -1px;
 }
 
 .meta {
   float: right;
   padding: .15rem 1rem .15rem 1rem;
-  margin: .3rem 0 0 0;
-  background-color: rgba(55, 55, 55, 0.5);
-  border: solid 1px #1e4433;
-  color: silver;
+  margin: .35rem 0 0 0;
+  background-color: #89bfa6;
+  color: #141414;
 }
 
 .project-posters, .client-logos, .project-special, .client-logos {
@@ -284,7 +292,7 @@ img, video {
 }
 
 .list-title {
-  color: silver;
+  color: #89bfa6;
 }
 
 .list-title:hover, .featured-title:hover {
@@ -293,7 +301,7 @@ img, video {
 
 .tags {
   position: relative;
-  font-size: .75em;
+  font-size: .8em;
   padding: 0;
   height: 2rem;
   margin: 0 0 2rem 0;
@@ -308,9 +316,9 @@ img, video {
 }
 
 .tag-link a {
-  border: solid 1px #1e4433;
-  background-color: rgba(55, 55, 55, 0.5);
+  background-color: #89bfa6;
   padding: .25rem .5rem .25rem .5rem;
+  color: #141414;
 }
 
 .tag-link a:hover {
@@ -351,11 +359,11 @@ img, video {
 }
 
 .pagination a {
-  color: silver;
+  color: #89bfa6;
 }
 
 .pagination a:hover {
-  color: white;
+  color: #aad1bf;
 }
 
 .disabled a {
@@ -367,11 +375,11 @@ img, video {
 }
 
 .paginator-area {
-  background-color: rgba(30, 30, 30, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .contact-form {
-  margin: 5rem 0 5rem 0;
+  margin: 2.5rem 0 2rem 0;
   width: 100%;
 }
 
@@ -384,14 +392,14 @@ img, video {
 footer {
   text-align: center;
   width: 100%;
-  color: silver;
+  color: #89bfa6;
   opacity: .999;
 }
 
 .main-footer {
   padding: .75em 10% .75em 10%;
   height: 3rem;
-  background-color: rgba(30, 30, 30, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 footer h6 {
@@ -414,20 +422,19 @@ footer h6 {
   margin: auto;
   height: 2rem;
   padding-top: .25rem;
-  background-color: rgba(30, 30, 30, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 640px) {
-  .millzologo {
-    width: 10rem;
-    height: 6.21rem;
+  html {
+    font-size: 1.25em;
   }
   .about-icon, .posts-icon, .contact-icon {
-    height: 2.25em;
-    width: 2.25em;
+    height: 1.75em;
+    width: 1.75em;
   }
   .about-icon {
-    height: 2.75em;
+    height: 2.25em;
   }
   .recent-two {
     flex-direction: row;
@@ -444,9 +451,6 @@ footer h6 {
   }
   body {
     padding-left: 30vw;
-  }
-  h1 {
-    padding: 1.8em 0 1.2rem 0;
   }
   header {
     flex-direction: column;
@@ -481,6 +485,9 @@ footer h6 {
     height: 2.25em;
     width: 2.25em;
   }
+  .about-icon {
+    height: 2.75em;
+  }
   .navlink {
     font-size: .8em;
   }
@@ -496,6 +503,7 @@ footer h6 {
   }
   .home, .container, .listcontainer {
     min-height: calc(100vh - 3rem);
+    padding: 4.5rem 10% 2rem 10%;
   }
   .listcontainer {
     min-height: calc(100vh - 6rem);

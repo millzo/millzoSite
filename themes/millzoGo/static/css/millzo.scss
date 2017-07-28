@@ -2,26 +2,26 @@
 
 $shadow: rgb(20,20,20);
 $background: $shadow;
-$contentbg: rgba(30,30,30,.4);
-$postbg: rgba(55,55,55,.5);
+$contentbg: rgba(130,130,130,.4);
+$contentbg: rgba(255,255,255,.1);
 $headerbg: $shadow;
 $green-glow: #0DEE88;
-// $millzologofill: rgb(150,220,150);
-$millzologofill: rgb(175,190,175);
-$millzologodesat: desaturate($green-glow, 50%);
-$millzologofill: lighten($millzologodesat, 20%);
-// $millzologofill: $green-glow;
+$millzologodesat: desaturate($green-glow, 60%);
+$millzologofill: lighten($millzologodesat, 15%);
+$tagbg: $millzologofill;
 $millzologofill-hover: $green-glow;
 $millzologostroke: $green-glow;
-$globe-blur: rgb(60,60,60);
-$globe-blur-hover: rgb(85,85,85);
+$globe-blur: rgb(50,50,50);
+$globe-blur-hover: rgb(70,70,70);
 $globe-stroke: rgba(13,238,136,1);
 $globe-fill: rgba(23,23,23,.95);
-$midtone: silver;
+$midtone: $millzologofill;
 $navlink: silver;
-$border: darken($millzologofill, 50%);
-$highlight: lighten($midtone, 30%);
-$copy: $midtone;
+$border: darken($millzologofill, 25%);
+$border: $tagbg;
+$highlight: lighten($midtone, 10%);
+$copy: silver;
+$copyreverse: $shadow;
 $border-params: solid 1px $border;
 
 // define size variables
@@ -69,17 +69,25 @@ body {
 
 h1, h2 {
   line-height: 1.1;
+  padding-bottom: .6rem;
+  margin-bottom: .25rem;
 }
 
 h1 {
-  font-size: 2.5em;
-  padding: .8em 0 1.2rem 0;
-  color: $navlink;
+  font-size: 2.5rem;
+  color: $midtone;
+}
+
+.page h1, .list h1 {
+  border-bottom: $border-params;
 }
 
 h2 {
   font-size: 2em;
-  padding: 0 0 .5em 0;
+}
+
+.listcontainer h2 {
+  margin-top: 3.5rem
 }
 
 *:link, *:visited {
@@ -158,7 +166,6 @@ header {
   .globe-blur {
     fill: $globe-blur-hover;
   }
-
 }
 
 nav {
@@ -232,7 +239,7 @@ img, video {
   min-height: calc(100vh - 14rem);
   width: 100%;
   display: block;
-  padding: 0 10% 5em 10%;
+  padding: 2.5rem 10% 5rem 10%;
   background-color: $contentbg;
   opacity: .999;
 }
@@ -243,13 +250,16 @@ img, video {
   max-width: 50rem;
 }
 
-.post-copy {
+.post-copy, .single-copy {
   padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 0 1rem 0;
   min-height: 100%;
   color: $copy;
-  background-color: $postbg;
-  border: $border-params;
   margin-top: -1px;
+}
+
+.post-copy {
+  border-bottom: $border-params;
 }
 
 .listcontainer {
@@ -272,21 +282,18 @@ img, video {
 }
 
 .description {
-  padding: 1rem;
-  background-color: $postbg;
-  border: $border-params;
+  padding: 1rem 0 1rem 0;
+  border-bottom: $border-params;
   color: $copy;
   margin: auto;
-  margin-top: -1px;
 }
 
 .meta {
   float: right;
   padding: .15rem 1rem .15rem 1rem;
-  margin: .3rem 0 0 0;
-  background-color: $postbg;
-  border: $border-params;
-  color: $copy;
+  margin: .35rem 0 0 0;
+  background-color: $tagbg;
+  color: $copyreverse;
 }
 
 .project-posters, .client-logos, .project-special, .client-logos {
@@ -332,7 +339,7 @@ img, video {
 
 .tags {
   position: relative;
-  font-size: .75em;
+  font-size: .8em;
   padding: 0;
   height: 2rem;
   margin: 0 0 2rem 0;
@@ -346,10 +353,9 @@ img, video {
   text-decoration: none;
 
   a {
-    border: $border-params;
-    background-color: $postbg;
+    background-color: $tagbg;
     padding: .25rem .5rem .25rem .5rem;
-    // color: $copy;
+    color: $copyreverse;
   }
 
   a:hover {
@@ -412,7 +418,7 @@ img, video {
 }
 
 .contact-form {
-  margin: 5rem 0 5rem 0;
+  margin: 2.5rem 0 2rem 0;
   width: 100%;
 }
 
@@ -462,18 +468,17 @@ footer h6 {
   $logo-width: 10rem;
   $logo-height: $logo-width * .621;
 
-  .millzologo {
-    width: $logo-width;
-    height: $logo-height;
+  html {
+    font-size: 1.25em;
   }
 
   .about-icon, .posts-icon, .contact-icon {
-    height: 2.25em;
-    width: 2.25em;
+    height: 1.75em;
+    width: 1.75em;
   }
 
   .about-icon {
-    height: 2.75em;
+    height: 2.25em;
   }
 
   .recent-two {
@@ -499,10 +504,6 @@ footer h6 {
 
   body {
     padding-left: 30vw;
-  }
-
-  h1 {
-    padding: 1.8em 0 1.2rem 0;
   }
 
   header {
@@ -542,6 +543,10 @@ footer h6 {
     width: 2.25em;
   }
 
+  .about-icon {
+    height: 2.75em;
+  }
+
   .navlink {
     font-size: .8em;
   }
@@ -561,6 +566,7 @@ footer h6 {
 
   .home, .container, .listcontainer {
     min-height: calc(100vh - 3rem);
+    padding: 4.5rem 10% 2rem 10%;
   }
 
   .listcontainer {
