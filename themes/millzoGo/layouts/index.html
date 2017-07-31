@@ -1,5 +1,5 @@
 {{ partial "header.html" . -}}
-<section class="home">
+<section class="home {{ print .Kind "-bg" }}">
 {{- if isset .Site.Taxonomies.tags "featured" }}
 {{- $featured := index .Site.Taxonomies.tags.featured 0 }}
 <div class="home-featured">
@@ -14,20 +14,27 @@
   </ul>
 </div>
 <div class="recent-two">
-{{- range $index, $recent := first 2 (where (where .Data.Pages ".Section" "posts") ".Title" "!=" $featured.Title) }}
+  {{- range $index, $recent := first 2 (where (where .Data.Pages ".Section" "posts") ".Title" "!=" $featured.Title) }}
 <div class="recent-items">
 {{- partial "listItems.html" . -}}
 </div>
 {{- end }}
 </div>
-{{ else }}
+{{- else }}
+  {{- range $index, $recent := first 1 (where .Data.Pages ".Section" "posts") }}
+<div class="home-featured">
+  {{- partial "listItems.html" . -}}
+</div>
+  {{- end }}
 <div class="recent-two">
-{{- range $index, $recent := first 2 (where .Data.Pages ".Section" "posts") }}
-<div class="recent-items">
-{{- partial "listItems.html" . -}}
-</div>
-{{- end }}
-</div>
+    {{- range $index, $recent := first 3 (where .Data.Pages ".Section" "posts") }}
+      {{- if gt $index 0 }}
+      <div class="recent-items">
+      {{- partial "listItems.html" . -}}
+      </div>
+      {{- end }}
+    {{- end }}
+  </div>
 {{- end }}
 </section>
 {{ partial "footer.html" . }}

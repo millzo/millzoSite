@@ -3,38 +3,17 @@
 <section class="page">
   <h1>{{ .Title }}</h1>
   <section class="single-copy">
-  {{ with .Params.featured_image }}<img class="about-feature" src="/img/{{ . }}" alt="{{ .Title}}">{{ end }}
-  {{- .Content -}}
-  <h3 class="project-heading">Films</h3>
-  <div class="project-posters">
-  {{- range .Params.movieposters }}
-  <img class="posters" src="/img/{{ . }}" alt="{{ . }}">
-  {{- end -}}
-</div>
-<h3 class="project-heading">Television</h3>
-<div class="project-posters">
-  {{ range .Params.tvposters }}
-  <img class="posters" src="/img/{{ . }}" alt="{{ . }}">
+{{ with .Params.featured_image }}<img class="about-feature" src="/img/{{ . }}" alt="{{ .Title}}">{{ end }}
+{{- .Content -}}
+  {{- range .Params.category -}}
+  <h3 class="project-heading">{{ .heading }}</h3>
+  <div class="{{ .class }}-gallery">
+    {{- $imgclass := (print .class "-img") }}
+    {{- range .images }}
+    <img class="{{ $imgclass }}" src="/img/{{ . }}" alt="{{ . }}">
+    {{- end }}
+  </div>
   {{- end }}
-</div>
-<h3 class="project-heading">Special Venue Projects</h3>
-<div class="project-special">
-  {{ range .Params.specialprojects -}}
-  <img class="specialprojects" src="/img/{{ . }}" alt="{{ . }}">
-  {{- end }}
-</div>
-<h4 class="project-heading">Clients</h4>
-<div class="client-logos">
-  {{ range .Params.clientlogos -}}
-  <img class="logos" src="/img/{{ . }}" alt="{{ . }}">
-  {{- end }}
-</div>
-<h4 class="project-heading">Tools</h4>
-<div class="vendor-logos">
-  {{ range .Params.vendorlogos -}}
-  <img class="logos" src="/img/{{ . }}" alt="{{ . }}">
-  {{- end }}
-</div>
 </section>
 </section>
 </div>

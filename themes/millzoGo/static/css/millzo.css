@@ -1,12 +1,14 @@
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Roboto Slab";
   font-size: 1em;
   line-height: 1.6;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
   font-family: inherit;
   font-weight: normal;
 }
@@ -25,8 +27,8 @@ body {
   display: block;
   padding-left: 0;
   padding-right: calc(100vw - 100%);
-  background-color: #141414;
   overflow-x: hidden;
+  background-color: #262626;
 }
 
 h1, h2 {
@@ -41,7 +43,7 @@ h1 {
 }
 
 .page h1, .list h1 {
-  border-bottom: solid 1px #89bfa6;
+  border-bottom: solid 1px #324a3f;
 }
 
 h2 {
@@ -49,7 +51,11 @@ h2 {
 }
 
 .listcontainer h2 {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
+}
+
+.home h2 {
+  margin-top: 1.5rem;
 }
 
 *:link, *:visited {
@@ -57,68 +63,72 @@ h2 {
   color: silver;
 }
 
+*::-moz-selection {
+  background: #badacb;
+  color: #191923;
+}
+
 *::selection {
-  background: #aad1bf;
-  color: #141414;
+  background: #badacb;
+  color: #191923;
 }
 
 *::-moz-selection {
-  background: #aad1bf;
-  color: #141414;
+  background: #badacb;
+  color: #191923;
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: inherit;
   top: inherit;
   left: inherit;
-  align-items: center;
-  justify-content: space-around;
-  height: 9rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 7.5rem;
   width: 100vw;
-  background-color: #141414;
+  background-color: #111e18;
+  border: solid 1px #324a3f;
+  border-width: 0 0 1px 0;
+  overflow: hidden;
 }
 
 .millzologo {
   width: 8rem;
   height: 4.968rem;
-  margin: 1.25rem 0 1rem 5vw;
+  margin: 1.5rem 0 1rem 5vw;
   overflow: visible;
-  order: initial;
+  -webkit-box-ordinal-group: initial;
+      -ms-flex-order: initial;
+          order: initial;
 }
 
 .millzologofill {
   fill: #89bfa6;
+  -webkit-transition: 1s;
   transition: 1s;
-}
-
-.millzologostroke {
-  stroke: #0DEE88;
-  stroke-width: 1.5;
-  opacity: .1;
-}
-
-.globe-blur {
-  fill: #323232;
-  transition: 1s;
-  overflow: visible;
 }
 
 .millzolink {
   z-index: 100;
 }
 
-.globe-fill {
-  fill: rgba(23, 23, 23, 0.95);
-}
-
 .globe-stroke {
   fill: none;
-  stroke: #0dee88;
+  stroke: #89bfa6;
 }
 
 .millzologo:hover {
+  -webkit-transition: 1.25s;
   transition: 1.25s;
 }
 
@@ -126,16 +136,20 @@ header {
   fill: #0DEE88;
 }
 
-.millzologo:hover .globe-blur {
-  fill: #464646;
-}
-
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-end;
-  order: initial;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-ordinal-group: initial;
+      -ms-flex-order: initial;
+          order: initial;
   width: calc(15em + 5vw);
   height: 6.5rem;
   padding: 0 .5em 0 .5em;
@@ -150,15 +164,18 @@ nav {
 
 .about-icon {
   height: 2.25em;
-  transform: rotateZ(22deg);
+  -webkit-transform: rotateZ(22deg);
+          transform: rotateZ(22deg);
 }
 
 .posts-icon {
-  transform: rotateZ(9deg);
+  -webkit-transform: rotateZ(9deg);
+          transform: rotateZ(9deg);
 }
 
 .contact-icon {
-  transform: rotateZ(-25deg);
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
 }
 
 .navlink {
@@ -166,28 +183,37 @@ nav {
   margin-top: .25rem;
 }
 
-#about-link {
-  align-self: flex-start;
-}
-
-#posts-link {
-  align-self: center;
-}
-
 .navlink:link, .navlink:visited {
+  -webkit-transition: 1.25s;
   transition: 1.25s;
   color: silver;
   stroke: silver;
   fill: silver;
-  opacity: .7;
 }
 
 .navlink:hover {
+  -webkit-transition: .25s;
   transition: .25s;
-  color: silver;
-  fill: silver;
-  stroke: silver;
+  color: #f0f0db;
+  fill: #f0f0db;
+  stroke: #f0f0db;
   opacity: 1;
+}
+
+.navlink-current:link, .navlink-current:visited {
+  color: #e0e0b8;
+  fill: #e0e0b8;
+  stroke: #e0e0b8;
+}
+
+#about-link {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+#posts-link {
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 img, video {
@@ -202,7 +228,6 @@ img, video {
   width: 100%;
   display: block;
   padding: 2.5rem 10% 5rem 10%;
-  background-color: rgba(255, 255, 255, 0.1);
   opacity: .999;
 }
 
@@ -216,73 +241,64 @@ img, video {
   padding: 1rem 2rem 1rem 2rem;
   padding: 1rem 0 1rem 0;
   min-height: 100%;
-  color: silver;
+  color: #a6a6a6;
   margin-top: -1px;
 }
 
 .post-copy {
-  border-bottom: solid 1px #89bfa6;
+  border-bottom: solid 1px #324a3f;
 }
 
 .listcontainer {
   min-height: calc(100vh - 17rem);
 }
 
+.img-home-feature, .list-img {
+  border: solid 1px #324a3f;
+  border-radius: .3em .3em 0 0;
+}
+
 .home-featured {
   display: block;
   width: 100%;
   max-width: 50rem;
-  margin: 0 auto 2rem auto;
-}
-
-.img-home-feature, .list-img {
-  border: solid 1px #89bfa6;
-}
-
-.list-title:hover > .img-home-feature {
-  border-color: #0DEE88;
+  margin: 0 auto 0 auto;
 }
 
 .description {
-  padding: 1rem 0 1rem 0;
-  border-bottom: solid 1px #89bfa6;
-  color: silver;
+  padding: 1rem .5rem 1rem .5rem;
+  border: solid 1px #324a3f;
+  border-top: none;
+  color: #a6a6a6;
+  background-color: #333333;
+}
+
+.recent-two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 50rem;
   margin: auto;
 }
 
-.meta {
-  float: right;
-  padding: .15rem 1rem .15rem 1rem;
-  margin: .35rem 0 0 0;
-  background-color: #89bfa6;
-  color: #141414;
-}
-
-.project-posters, .client-logos, .project-special, .client-logos {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  margin: 0;
-}
-
-.posters {
+.recent-items {
   display: block;
-  width: calc(10rem * .675);
-  height: 10rem;
-  margin: .25rem;
+  width: 100%;
+  font-size: 70%;
 }
 
-.specialprojects {
-  width: 15rem;
-  margin: 0 1rem 0 1rem;
-}
-
-.logos {
-  display: block;
-  align-self: center;
-  width: 6rem;
-  height: 100%;
-  margin: 0 1rem 0 1rem;
+.recent-items .description {
+  display: none;
 }
 
 .list-item {
@@ -301,47 +317,36 @@ img, video {
 
 .tags {
   position: relative;
-  font-size: .8em;
+  font-size: .6em;
   padding: 0;
-  height: 2rem;
-  margin: 0 0 2rem 0;
+  margin: 0;
+  background-color: #324a3f;
+  border: solid 1px #324a3f;
+  border-top: none;
 }
 
-.tag-link {
+.tag-link, .meta {
   display: inline;
-  position: relative;
-  margin: 0 .25rem 0 0;
-  bottom: -.5rem;
+  margin: 0 .25em 0 0;
   text-decoration: none;
 }
 
-.tag-link a {
+.tag-link a, .meta a {
   background-color: #89bfa6;
-  padding: .25rem .5rem .25rem .5rem;
-  color: #141414;
+  padding: .15em .5em .15em .5em;
+  color: #191923;
 }
 
-.tag-link a:hover {
-  color: #141414;
+.tag-link a:hover, .meta a:hover {
+  color: #191923;
   background-color: #0DEE88;
 }
 
-.recent-two {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  max-width: 50rem;
-  margin: auto;
-}
-
-.recent-items {
-  width: 100%;
-  font-size: 70%;
-}
-
-.recent-items .description {
-  display: none;
+.meta {
+  float: right;
+  background-color: #89bfa6;
+  padding: 0 .5em 0 .5em;
+  margin: 0;
 }
 
 .pagination {
@@ -363,19 +368,50 @@ img, video {
 }
 
 .pagination a:hover {
-  color: #aad1bf;
+  color: #badacb;
 }
 
 .disabled a {
-  color: #141414;
+  color: #191923;
 }
 
 .active a {
   color: #0DEE88;
 }
 
-.paginator-area {
-  background-color: rgba(255, 255, 255, 0.1);
+.film-gallery, .tv-gallery, .special-gallery, .clients-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0;
+}
+
+.film-img, .tv-img {
+  display: block;
+  width: calc(10rem * .675);
+  height: 10rem;
+  margin: 0;
+}
+
+.special-img {
+  width: 15rem;
+  margin: 0 1rem 0 1rem;
+}
+
+.clients-img, .tools-img {
+  display: block;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 6rem;
+  height: 100%;
+  margin: 0 1rem 0 1rem;
 }
 
 .contact-form {
@@ -394,12 +430,6 @@ footer {
   width: 100%;
   color: #89bfa6;
   opacity: .999;
-}
-
-.main-footer {
-  padding: .75em 10% .75em 10%;
-  height: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 footer h6 {
@@ -422,12 +452,20 @@ footer h6 {
   margin: auto;
   height: 2rem;
   padding-top: .25rem;
-  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-footer {
+  padding: .75em 10% .75em 10%;
+  height: 3rem;
 }
 
 @media (min-width: 640px) {
   html {
-    font-size: 1.25em;
+    font-size: 1.1em;
+  }
+  .millzologo {
+    width: 9rem;
+    height: 5.589rem;
   }
   .about-icon, .posts-icon, .contact-icon {
     height: 1.75em;
@@ -437,7 +475,10 @@ footer h6 {
     height: 2.25em;
   }
   .recent-two {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .recent-items {
     width: 49%;
@@ -453,12 +494,19 @@ footer h6 {
     padding-left: 30vw;
   }
   header {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
-    align-items: center;
-    justify-content: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
     height: 100vh;
     width: 30vw;
     border-width: 0 1px 0 0;
@@ -467,15 +515,23 @@ footer h6 {
     width: 13vw;
     height: auto;
     margin: 3.5vh 0 0 0;
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     min-width: 8rem;
     max-width: 12rem;
   }
   nav {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    order: 1;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     width: 28vw;
     max-width: 28rem;
     height: 5.5rem;
@@ -496,10 +552,12 @@ footer h6 {
     margin-top: 2rem;
   }
   #about-link {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
   #posts-link {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .home, .container, .listcontainer {
     min-height: calc(100vh - 3rem);
@@ -513,14 +571,16 @@ footer h6 {
     padding: 0 .5rem 0 .5rem;
   }
   .social-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     padding: 0 4rem 0 4rem;
     position: fixed;
     width: 30vw;
     left: 0;
     bottom: 1rem;
-    background-color: transparent;
   }
   footer {
     padding: .75em 12% .75em 12%;

@@ -1,5 +1,5 @@
 <nav>
-  <a class="navlink" id="about-link" href="{{ .Site.BaseURL }}about/index.html">{{ partial "aboutIcon.html" . }}About</a>
-  <a class="navlink" id="posts-link" href="{{ .Site.BaseURL }}posts/index.html">{{ partial "postsIcon.html" . }}Posts</a>
-  <a class="navlink" id="contact-link" href="{{ .Site.BaseURL }}contact/index.html">{{ partial "contactIcon.html" . }}Contact</a>
+  <a class="navlink{{ if eq .Params.type "about" }}{{ " navlink-current" }}{{ end }}" id="about-link" href="{{ .Site.BaseURL }}about/index.html">{{ partial "aboutIcon.html" . }}About</a>
+  <a class="navlink{{ if eq .Kind "section" }}{{ " navlink-current" }}{{ end }}" id="posts-link" href="{{ .Site.BaseURL }}posts/index.html">{{ partial "postsIcon.html" . }}Posts</a>
+  <a class="navlink{{ if eq .Params.type "contact" }}{{ " navlink-current" }}{{ end }}" id="contact-link" href="{{ .Site.BaseURL }}contact/index.html">{{ partial "contactIcon.html" . }}Contact</a>
 </nav>

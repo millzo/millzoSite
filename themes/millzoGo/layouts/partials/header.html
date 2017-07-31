@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/millzo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
 </head>
-<body>
+<body class="{{ with .Params.type }}{{ print . "-bg" }}{{ else }}{{ print .Kind "-bg" }}{{ end }}">
 <header>
   {{- partial "millzo2d.html" . -}}
   {{- partial "nav.html" . -}}

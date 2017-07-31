@@ -2,5 +2,5 @@
   {{- range .Params.tags }}
   <li class="tag-link"><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
   {{- end }}
-  <span class="meta">{{ .PublishDate.Format "Jan 2, 2006" -}}</span>
+  <li class="meta">{{ .PublishDate.Format "Jan 2, 2006" -}}</li>
 </ul>
