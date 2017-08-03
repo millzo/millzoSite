@@ -4,9 +4,13 @@
     <video class="img-home-feature" preload="none" controls>
       <source src="/img/{{ $imgfeatured }}" type="video/mp4">
     </video>
+    {{ else if in $imgfeatured "youtube.com" }}
+    <div class="tube-container">
+      <iframe src="{{ $imgfeatured }}" frameborder="0" allowfullscreen></iframe>
+    </div>
     {{- else -}}
-    {{- $imgwidth := int .Params.imgwidth -}}
-      <img class="img-home-feature" srcset="{{- range $srci, $srcwidth := .Params.srcwidth -}}
+    {{- $imgwidth := int .Params.maximgwidth -}}
+      <img class="img-home-feature" srcset="{{- range $srci, $srcwidth := .Params.srcwidths -}}
                                               {{- if le (int $srcwidth) ($imgwidth) -}}
                                               {{- if $srci -}}{{- "," }} {{ end -}}
                                                 {{ if eq (int $srcwidth) $imgwidth -}}

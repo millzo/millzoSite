@@ -1,6 +1,6 @@
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Roboto Slab";
   font-size: 1em;
   line-height: 1.6;
@@ -8,7 +8,7 @@ html {
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   font-family: inherit;
   font-weight: normal;
 }
@@ -23,6 +23,10 @@ body, .html, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #89bfa6;
+}
+
 body {
   display: block;
   padding-left: 0;
@@ -33,12 +37,12 @@ body {
 
 h1, h2 {
   line-height: 1.1;
-  padding-bottom: .6rem;
-  margin-bottom: .25rem;
+  padding-bottom: .4em;
+  margin-bottom: .25em;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2em;
   color: #89bfa6;
 }
 
@@ -47,7 +51,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .listcontainer h2 {
@@ -65,17 +69,17 @@ h2 {
 
 *::-moz-selection {
   background: #badacb;
-  color: #191923;
+  color: #191919;
 }
 
 *::selection {
   background: #badacb;
-  color: #191923;
+  color: #191919;
 }
 
 *::-moz-selection {
   background: #badacb;
-  color: #191923;
+  color: #191919;
 }
 
 header {
@@ -84,16 +88,16 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   position: inherit;
   top: inherit;
   left: inherit;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   height: 7.5rem;
   width: 100vw;
   background-color: #111e18;
@@ -108,8 +112,8 @@ header {
   margin: 1.5rem 0 1rem 5vw;
   overflow: visible;
   -webkit-box-ordinal-group: initial;
-      -ms-flex-order: initial;
-          order: initial;
+  -ms-flex-order: initial;
+  order: initial;
 }
 
 .millzologofill {
@@ -141,18 +145,18 @@ nav {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   -webkit-box-ordinal-group: initial;
-      -ms-flex-order: initial;
-          order: initial;
-  width: calc(15em + 5vw);
+  -ms-flex-order: initial;
+  order: initial;
+  width: calc(12em + 5vw);
   height: 6.5rem;
-  padding: 0 .5em 0 .5em;
+  padding: .2rem .5rem .2rem .5rem;
 }
 
 .about-icon, .posts-icon, .contact-icon {
@@ -165,22 +169,23 @@ nav {
 .about-icon {
   height: 2.25em;
   -webkit-transform: rotateZ(22deg);
-          transform: rotateZ(22deg);
+  transform: rotateZ(22deg);
 }
 
 .posts-icon {
   -webkit-transform: rotateZ(9deg);
-          transform: rotateZ(9deg);
+  transform: rotateZ(9deg);
 }
 
 .contact-icon {
   -webkit-transform: rotateZ(-25deg);
-          transform: rotateZ(-25deg);
+  transform: rotateZ(-25deg);
 }
 
 .navlink {
   padding: 0 .5em 0 .5em;
   margin-top: .25rem;
+  font-size: .85rem;
 }
 
 .navlink:link, .navlink:visited {
@@ -208,19 +213,12 @@ nav {
 
 #about-link {
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
 
 #posts-link {
   -ms-flex-item-align: center;
-      align-self: center;
-}
-
-img, video {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: auto;
+  align-self: center;
 }
 
 .home, .container, .listcontainer {
@@ -231,6 +229,10 @@ img, video {
   opacity: .999;
 }
 
+.listcontainer {
+  min-height: calc(100vh - 17rem);
+}
+
 .post, .page, .list {
   width: 100%;
   margin: 0 auto 0 auto;
@@ -238,24 +240,14 @@ img, video {
 }
 
 .post-copy, .single-copy {
-  padding: 1rem 2rem 1rem 2rem;
-  padding: 1rem 0 1rem 0;
+  padding: .5rem 0 .5rem 0;
+  padding: 0;
   min-height: 100%;
   color: #a6a6a6;
-  margin-top: -1px;
 }
 
 .post-copy {
   border-bottom: solid 1px #324a3f;
-}
-
-.listcontainer {
-  min-height: calc(100vh - 17rem);
-}
-
-.img-home-feature, .list-img {
-  border: solid 1px #324a3f;
-  border-radius: .3em .3em 0 0;
 }
 
 .home-featured {
@@ -263,6 +255,18 @@ img, video {
   width: 100%;
   max-width: 50rem;
   margin: 0 auto 0 auto;
+}
+
+.img-home-feature, .list-img {
+  border: solid 1px #324a3f;
+  border-radius: .3em .3em 0 0;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
 }
 
 .description {
@@ -279,14 +283,14 @@ img, video {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   max-width: 50rem;
   margin: auto;
 }
@@ -294,7 +298,6 @@ img, video {
 .recent-items {
   display: block;
   width: 100%;
-  font-size: 70%;
 }
 
 .recent-items .description {
@@ -302,13 +305,34 @@ img, video {
 }
 
 .list-item {
+  display: block;
   width: 100%;
+  height: 100%;
   max-width: 50rem;
   margin: 0 auto 0 auto;
 }
 
-.list-title {
-  color: #89bfa6;
+.tube-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.tube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ol, ul {
+  font-size: .8rem;
+  padding-left: 1em;
+}
+
+ol li {
+  padding-bottom: .8em;
 }
 
 .list-title:hover, .featured-title:hover {
@@ -334,11 +358,11 @@ img, video {
 .tag-link a, .meta a {
   background-color: #89bfa6;
   padding: .15em .5em .15em .5em;
-  color: #191923;
+  color: #191919;
 }
 
 .tag-link a:hover, .meta a:hover {
-  color: #191923;
+  color: #191919;
   background-color: #0DEE88;
 }
 
@@ -372,7 +396,7 @@ img, video {
 }
 
 .disabled a {
-  color: #191923;
+  color: #191919;
 }
 
 .active a {
@@ -385,33 +409,49 @@ img, video {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0;
+}
+
+.project-heading {
+  margin: 2.25rem 0 1.5rem 0;
+  padding-bottom: .25rem;
+  color: #89bfa6;
+  border-bottom: solid 1px #324a3f;
 }
 
 .film-img, .tv-img {
   display: block;
-  width: calc(10rem * .675);
-  height: 10rem;
+  width: 20%;
+  height: auto;
   margin: 0;
 }
 
 .special-img {
-  width: 15rem;
-  margin: 0 1rem 0 1rem;
+  width: 25%;
+  background-color: white;
+  padding: .5rem;
+  margin: 0;
 }
 
 .clients-img, .tools-img {
   display: block;
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   width: 6rem;
   height: 100%;
   margin: 0 1rem 0 1rem;
+}
+
+.tools-img {
+  width: 4rem;
 }
 
 .contact-form {
@@ -461,7 +501,7 @@ footer h6 {
 
 @media (min-width: 640px) {
   html {
-    font-size: 1.1em;
+    font-size: 1.05em;
   }
   .millzologo {
     width: 9rem;
@@ -477,18 +517,21 @@ footer h6 {
   .recent-two {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   .recent-items {
     width: 49%;
-    font-size: 70%;
+    font-size: .8rem;
+  }
+  .recent-items h2 {
+    font-size: 1.25em;
   }
 }
 
 @media (min-width: 900px) {
   html {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
   body {
     padding-left: 30vw;
@@ -496,17 +539,17 @@ footer h6 {
   header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial;
     height: 100vh;
     width: 30vw;
     border-width: 0 1px 0 0;
@@ -514,24 +557,24 @@ footer h6 {
   .millzologo {
     width: 13vw;
     height: auto;
-    margin: 3.5vh 0 0 0;
+    margin: 5vh 0 0 0;
     -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    -ms-flex-order: 2;
+    order: 2;
     min-width: 8rem;
     max-width: 12rem;
   }
   nav {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    -ms-flex-order: 1;
+    order: 1;
     width: 28vw;
     max-width: 28rem;
     height: 5.5rem;
@@ -545,19 +588,17 @@ footer h6 {
     height: 2.75em;
   }
   .navlink {
-    font-size: .8em;
-  }
-  .navlink {
     padding: 0 .5em 0 .5em;
     margin-top: 2rem;
+    font-size: .75rem;
   }
   #about-link {
     -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
   }
   #posts-link {
     -ms-flex-item-align: start;
-        align-self: flex-start;
+    align-self: flex-start;
   }
   .home, .container, .listcontainer {
     min-height: calc(100vh - 3rem);
@@ -575,7 +616,7 @@ footer h6 {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     padding: 0 4rem 0 4rem;
     position: fixed;
     width: 30vw;
@@ -589,12 +630,15 @@ footer h6 {
 
 @media (min-width: 1500px) {
   html {
-    font-size: 1.5em;
+    font-size: 1.15em;
+  }
+  .navlink {
+    font-size: .85rem;
   }
 }
 
-@media (min-width: 3000px) {
+@media (min-width: 2500px) {
   html {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }

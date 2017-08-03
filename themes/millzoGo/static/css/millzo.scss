@@ -1,15 +1,15 @@
 // define color variables
 
-$shadow: rgb(25,25,35);
+$shadow: rgb(25,25,25);
 $postbg: lighten(black, 15%); //grey
 $desbg: lighten($postbg, 5%);
-// $desbg: $postbg;
 $background: $postbg;
 $green-glow: #0DEE88;
 $millzologofill: lighten(desaturate($green-glow, 60%), 15%);
 $millzologofill-hover: $green-glow;
 $navlink-hover: lighten(silver, 25%);
 $navlink-hover: lighten(desaturate(yellow, 60%), 40%);
+// $navlink-hover: white;
 $headerbg: $shadow;
 $tagbg: $millzologofill;
 $globe-stroke: $millzologofill;
@@ -17,9 +17,11 @@ $midtone: desaturate($millzologofill, 10%);
 $midtone: $millzologofill;
 $navlink: silver;
 $navlink-current: darken($navlink-hover, 10%);
+// $navlink-current: $millzologofill;
 $border: lighten($desbg, 10%);
 $border: darken(desaturate(orange, 70%), 15%);
 $border: darken(desaturate($midtone, 10%), 40%);
+// $border: $midtone;
 $highlight: lighten($midtone, 15%);
 $copy: silver;
 $copy: lighten($postbg, 50%);
@@ -62,6 +64,10 @@ body, .html, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: $midtone;
+}
+
 body {
   display: block;
   padding-left: 0;
@@ -72,12 +78,12 @@ body {
 
 h1, h2 {
   line-height: 1.1;
-  padding-bottom: .6rem;
-  margin-bottom: .25rem;
+  padding-bottom: .4em;
+  margin-bottom: .25em;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2em;
   color: $midtone;
 }
 
@@ -86,7 +92,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .listcontainer h2  {
@@ -97,10 +103,18 @@ h2 {
   margin-top: 1.5rem;
 }
 
+// p {
+//   margin: .5rem 0 .5rem 0;
+// }
 
 *:link, *:visited {
   text-decoration: none;
   color: $navlink;
+}
+
+*::-moz-selection {
+  background: $highlight;
+  color: $shadow;
 }
 
 *::selection {
@@ -139,7 +153,7 @@ header {
 
 .millzologofill {
   fill: $millzologofill;
-    transition: 1s;
+  transition: 1s;
 }
 
 .millzolink {
@@ -165,9 +179,9 @@ nav {
   justify-content: space-around;
   align-items: flex-end;
   order: initial;
-  width: calc(15em + 5vw);
+  width: calc(12em + 5vw);
   height: 6.5rem;
-  padding: 0 .5em 0 .5em;
+  padding: .2rem .5rem .2rem .5rem;
 }
 
 .about-icon, .posts-icon, .contact-icon {
@@ -193,6 +207,7 @@ nav {
 .navlink {
   padding: 0 .5em 0 .5em;
   margin-top: .25rem;
+  font-size: .85rem;
 }
 
 .navlink:link, .navlink:visited {
@@ -224,12 +239,6 @@ nav {
   align-self: center;
 }
 
-img, video {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
 
 .home, .container, .listcontainer {
   min-height: calc(100vh - 14rem);
@@ -239,6 +248,10 @@ img, video {
   opacity: .999;
 }
 
+.listcontainer {
+  min-height: calc(100vh - 17rem);
+}
+
 .post, .page, .list {
   width: 100%;
   margin: 0 auto 0 auto;
@@ -246,24 +259,16 @@ img, video {
 }
 
 .post-copy, .single-copy {
-  padding: 1rem 2rem 1rem 2rem;
-  padding: 1rem 0 1rem 0;
+  // padding: 1rem 2rem 1rem 2rem;
+  padding: .5rem 0 .5rem 0;
+  padding: 0;
   min-height: 100%;
   color: $copy;
-  margin-top: -1px;
+  // margin-top: -1px;
 }
 
 .post-copy {
   border-bottom: $border-params;
-}
-
-.listcontainer {
-  min-height: calc(100vh - 17rem);
-}
-
-.img-home-feature, .list-img {
-  border: $border-params;
-  border-radius: .3em .3em 0 0;
 }
 
 .home-featured {
@@ -273,9 +278,17 @@ img, video {
   margin: 0 auto 0 auto;
 }
 
-// .list-title:hover > .img-home-feature {
-//   border-color: $green-glow;
-// }
+.img-home-feature, .list-img {
+  border: $border-params;
+  border-radius: .3em .3em 0 0;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
 
 .description {
   padding: 1rem .5rem 1rem .5rem;
@@ -297,7 +310,6 @@ img, video {
 .recent-items {
   display: block;
   width: 100%;
-  font-size: 70%;
 
   .description {
     display: none;
@@ -305,13 +317,33 @@ img, video {
 }
 
 .list-item {
+  display: block;
   width: 100%;
+  height: 100%;
   max-width: 50rem;
   margin: 0 auto 0 auto;
 }
 
-.list-title {
-  color: $midtone;
+.tube-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+ol, ul {
+  font-size: .8rem;
+  padding-left: 1em;
+}
+
+ol li {
+  padding-bottom: .8em;
 }
 
 .list-title:hover, .featured-title:hover {
@@ -386,19 +418,29 @@ img, video {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  align-items: center;
   margin: 0;
+}
+
+.project-heading {
+  margin: 2.25rem 0 1.5rem 0;
+  padding-bottom: .25rem;
+  color: $midtone;
+  border-bottom: $border-params;
 }
 
 .film-img, .tv-img {
   display: block;
-  width: calc(10rem * .675);
-  height: 10rem;
+  width: 20%;
+  height: auto;
   margin: 0;
 }
 
 .special-img {
-  width: 15rem;
-  margin: 0 1rem 0 1rem;
+  width: 25%;
+  background-color: white;
+  padding: .5rem;
+  margin: 0;
 }
 
 .clients-img, .tools-img {
@@ -407,6 +449,10 @@ img, video {
   width: 6rem;
   height: 100%;
   margin: 0 1rem 0 1rem;
+}
+
+.tools-img {
+  width: 4rem;
 }
 
 .contact-form {
@@ -459,7 +505,7 @@ footer {
   $logo-height: $logo-width * .621;
 
   html {
-    font-size: 1.1em;
+    font-size: 1.05em;
   }
 
   .millzologo {
@@ -482,18 +528,21 @@ footer {
 
   .recent-items {
     width: 49%;
-    font-size: 70%;
+    font-size: .8rem;
+    h2 {
+      font-size: 1.25em;
+    }
   }
 }
 
 @media (min-width: 900px) {
-  $logo-margin: 3.5vh 0 0 0;
+  $logo-margin: 5vh 0 0 0;
   $logo-width: 13vw;
   $logo-height: calc(13vw * .621);
   $logo-height: auto;
 
   html {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
 
   body {
@@ -542,12 +591,9 @@ footer {
   }
 
   .navlink {
-    font-size: .8em;
-  }
-
-  .navlink {
     padding: 0 .5em 0 .5em;
     margin-top: 2rem;
+    font-size: .75rem;
   }
 
   #about-link {
@@ -589,12 +635,16 @@ footer {
 
 @media (min-width: 1500px) {
   html {
-    font-size: 1.5em;
+    font-size: 1.15em;
+  }
+
+  .navlink {
+  font-size: .85rem;
   }
 }
 
-@media (min-width: 3000px) {
+@media (min-width: 2500px) {
   html {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }

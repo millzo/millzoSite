@@ -4,3 +4,9 @@ languageCode = "en-us"
 title = "Millzo, Inc."
 [taxonomies]
 tag = "tags"
+
+[params]
+  # Social media links
+  linkedin = "https://www.linkedin.com/company/millzo-inc"
+  twitter = "https://www.twitter.com/MillzoInc"
+  facebook = "www.facebook.com"

@@ -4,10 +4,14 @@
     <video class="img-home-feature" preload="none" controls>
       <source src="/img/{{ $imgfeatured }}" type="video/mp4">
     </video>
+    {{ else if in $imgfeatured "vimeo.com" }}
+    <div class="tube-container">
+      <iframe src="{{ $imgfeatured }}" frameborder="0" allowfullscreen></iframe>
+    </div>
     {{- else -}}
-    {{- $imgwidth := int .Params.imgwidth -}}
+    {{- $imgwidth := int .Params.maximgwidth -}}
     <a href="{{ .Permalink }}">
-      <img class="img-home-feature" srcset="{{- range $srci, $srcwidth := .Params.srcwidth -}}
+      <img class="img-home-feature" srcset="{{- range $srci, $srcwidth := .Params.srcwidths -}}
                                               {{- if le (int $srcwidth) ($imgwidth) -}}
                                               {{- if $srci -}}{{- "," }} {{ end -}}
                                                 {{ if eq (int $srcwidth) $imgwidth -}}
