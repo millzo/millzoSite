@@ -7,15 +7,15 @@
   <meta name="twitter:description" content="{{ .Params.description }}">
   <meta name="twitter:creator" content="@MillzoInc">
   {{- if .Params.featured_image }}
-  <meta name="twitter:image:src" content="{{ .Site.BaseURL }}img/{{ .Params.featured_image }}">
+  <meta name="twitter:image:src" content="{{ if in .Params.featured_image "http" }}{{ .Params.featured_image }}{{ else }}{{ .Site.BaseURL }}img/{{ .Params.featured_image }}{{ end }}">
   {{ else }}
   <meta name="twitter:image:src" content="">
   {{ end -}}
   <meta name="og:title" content="{{ .Title }}">
   <meta name="og:type" content="article">
-  <meta name="og:url" content="{{ .Site.BaseURL }}{{ .Permalink }}">
+  <meta name="og:url" content="{{ if .IsHome }}{{ .Site.BaseURL }}{{ else }}{{ .Permalink }}{{ end }}">
   {{- if .Params.featured_image }}
-  <meta name="og:image" content="{{ .Site.BaseURL }}img/{{ .Params.featured_image }}">
+  <meta name="og:image" content="{{ if in .Params.featured_image "http" }}{{ .Params.featured_image }}{{ else }}{{ .Site.BaseURL }}img/{{ .Params.featured_image }}{{ end }}">
   {{ else }}
   <meta name="og:image" content="">
   {{ end -}}
