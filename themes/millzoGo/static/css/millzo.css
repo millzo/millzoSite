@@ -1,7 +1,7 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", serif;
   font-size: 1em;
   line-height: 1.6;
 }
@@ -25,6 +25,7 @@ body, .html, h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3, h4, h5, h6 {
   color: #89bfa6;
+  font-family: "Jura", sans-serif;
 }
 
 body {
@@ -37,12 +38,12 @@ body {
 
 h1, h2 {
   line-height: 1.1;
-  padding-bottom: .4em;
+  padding-bottom: .25em;
   margin-bottom: .25em;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   color: #89bfa6;
 }
 
@@ -51,7 +52,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 .listcontainer h2 {
@@ -98,18 +99,18 @@ header {
   align-items: center;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  height: 7.5rem;
+  height: 7rem;
   width: 100vw;
-  background-color: #111e18;
+  background-color: #191919;
   border: solid 1px #324a3f;
   border-width: 0 0 1px 0;
   overflow: hidden;
 }
 
 .millzologo {
-  width: 8rem;
-  height: 4.968rem;
-  margin: 1.5rem 0 1rem 5vw;
+  width: 7rem;
+  height: 4.347rem;
+  margin: 1.5rem 0 1rem 5.5vw;
   overflow: visible;
   -webkit-box-ordinal-group: initial;
   -ms-flex-order: initial;
@@ -155,8 +156,8 @@ nav {
   -ms-flex-order: initial;
   order: initial;
   width: calc(12em + 5vw);
-  height: 6.5rem;
-  padding: .2rem .5rem .2rem .5rem;
+  height: 6rem;
+  padding: .2rem .6rem .2rem .6rem;
 }
 
 .about-icon, .posts-icon, .contact-icon {
@@ -225,7 +226,7 @@ nav {
   min-height: calc(100vh - 14rem);
   width: 100%;
   display: block;
-  padding: 2.5rem 10% 5rem 10%;
+  padding: 2rem 10% 5rem 10%;
   opacity: .999;
 }
 
@@ -270,11 +271,21 @@ img, video {
 }
 
 .description {
-  padding: 1rem .5rem 1rem .5rem;
+  font-size: .8em;
+  padding: .5rem;
+  margin: 0;
   border: solid 1px #324a3f;
   border-top: none;
   color: #a6a6a6;
   background-color: #333333;
+}
+
+.morelink:link, .morelink:visited {
+  color: #89bfa6;
+}
+
+.morelink:hover {
+  color: #0DEE88;
 }
 
 .recent-two {
@@ -327,12 +338,12 @@ img, video {
 }
 
 ol, ul {
-  font-size: .8rem;
-  padding-left: 1em;
+  font-size: .85rem;
+  padding-left: 2em;
 }
 
 ol li {
-  padding-bottom: .8em;
+  padding-bottom: .5em;
 }
 
 .list-title:hover, .featured-title:hover {
@@ -396,7 +407,7 @@ ol li {
 }
 
 .disabled a {
-  color: #191919;
+  color: #89bfa6;
 }
 
 .active a {
@@ -504,8 +515,8 @@ footer h6 {
     font-size: 1.05em;
   }
   .millzologo {
-    width: 9rem;
-    height: 5.589rem;
+    width: 8rem;
+    height: 4.968rem;
   }
   .about-icon, .posts-icon, .contact-icon {
     height: 1.75em;
@@ -525,7 +536,7 @@ footer h6 {
     font-size: .8rem;
   }
   .recent-items h2 {
-    font-size: 1.25em;
+    font-size: 1.75em;
   }
 }
 
@@ -602,7 +613,7 @@ footer h6 {
   }
   .home, .container, .listcontainer {
     min-height: calc(100vh - 3rem);
-    padding: 4.5rem 10% 2rem 10%;
+    padding: 3rem 10% 2rem 10%;
   }
   .listcontainer {
     min-height: calc(100vh - 6rem);
@@ -621,7 +632,7 @@ footer h6 {
     position: fixed;
     width: 30vw;
     left: 0;
-    bottom: 1rem;
+    bottom: .6rem;
   }
   footer {
     padding: .75em 12% .75em 12%;

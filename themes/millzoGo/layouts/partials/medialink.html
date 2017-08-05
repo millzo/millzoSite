@@ -4,9 +4,13 @@
     <video class="img-home-feature" preload="none" controls>
       <source src="/img/{{ $imgfeatured }}" type="video/mp4">
     </video>
-    {{ else if in $imgfeatured "vimeo.com" }}
+    {{- else if in $imgfeatured "youtube.com" -}}
     <div class="tube-container">
       <iframe src="{{ $imgfeatured }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    {{- else if in $imgfeatured "vimeo.com" -}}
+    <div class="tube-container">
+      <iframe src="{{ $imgfeatured }}?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
     {{- else -}}
     {{- $imgwidth := int .Params.maximgwidth -}}

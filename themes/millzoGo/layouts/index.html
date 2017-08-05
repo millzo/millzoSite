@@ -5,7 +5,7 @@
 <div class="home-featured">
   <a href="{{ $featured.Permalink }}"><h1 class="featured-title">{{ $featured.Title }}</h1></a>
 {{ partial "medialink.html" $featured }}
-  {{ with $featured.Params.description }}<h5 class="description">{{ . }}</h5>{{ end }}
+  {{ with $featured.Params.description }}<p class="description">{{ print . " " }}<a class="morelink" href="{{ $featured.Permalink }}">>></a></p>{{ end }}
   <ul class="tags">
     {{- range $featured.Params.tags }}
     <li class="tag-link"><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>

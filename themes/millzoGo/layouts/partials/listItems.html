@@ -1,6 +1,7 @@
+{{- $link := .Permalink -}}
 <div class="list-item">
-  <a class="list-title" href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+  <a class="list-title" href="{{ $link }}"><h2>{{ .Title }}</h2></a>
   {{ partial "medialink.html" . }}
-  {{- with .Params.description }}<h5 class="description">{{ . }}</h5>{{ end }}
+  {{- with .Params.description }}<p class="description">{{ print . " " }}<a class="morelink" href="{{ $link }}">>></a></p>{{ end }}
   {{ partial "taglist.html" . -}}
 </div>
