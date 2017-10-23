@@ -1,15 +1,9 @@
-<form class="contact-form" method="post" action="//flipmail.co/api/CVHsNASAfffwQPELAm9X">
-  <input type="hidden" name="_valid[name]" value="required">
-  <input type="hidden" name="_valid[email]" value="required|valid_email">
-  <input type="hidden" name="_valid[message]" value="required">
-  <input type="hidden" name="_replyto" value="%email">
-  <input type="text" name="_honey" value="" style="display:none">
-  <h4>*Name</h4>
+<form name="contact" class="contact-form" action="{{ .Site.BaseURL }}contact-success" netlify>
+  <h4>Name</h4>
   <input class="input-field" type="text" name="name">
-  <h4>*Email</h4>
+  <h4>Email</h4>
   <input class="input-field" type="email" name="email">
-  <h4>*Message</h4>
+  <h4>Message</h4>
   <textarea class="input-field" name="message" rows="5"></textarea>
-  <input type="hidden" name="_after" value="{{ .Site.BaseURL }}contact-success">
   <button class="contact-button" type="submit">Send</button>
 </form>
