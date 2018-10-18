@@ -29,7 +29,7 @@ heading = "Our Preferred Software Includes"
 images = [ "200-3de.png" ]
 +++
 Established July 2014, Millzo, Inc. is a Visual Effects and creative content company serving the entertainment industry.
-We have worked on a variety of projects from blockbusters to short films. The current services we offer for hire are matchmove/tracking, layout and on-set survey with more services to follow.
+We have worked on a variety of projects from blockbuster features to short films. The current services we offer for hire are matchmove/tracking, layout and on-set survey with more services to follow.
 
 In addition to the services offered we are also working on our own original content projects.
 

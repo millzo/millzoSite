@@ -5,4 +5,4 @@ type = "contact"
 +++
 
 To inquire about availability for VFX services or general information we can be contacted via
-linkedIn, twitter, facebook or email by using the following form.
+linkedIn, twitter or email by using the following form.
